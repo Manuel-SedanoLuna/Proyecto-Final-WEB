@@ -26,13 +26,13 @@ if (isset($_POST['email'])) {
         } else {
             // Registrar la fecha y el horario en la base de datos
             $sql = "INSERT INTO Citas (nombre, correo, telefono, fecha, hora) VALUES ('$nombre', '$email', '$tel', '$fecha', '$hora')";
-            $sql = "SELECT id FROM citas WHERE nombre ='$nombre'AND correo = '$email' AND telefono = '$tel' AND fecha = '$fecha' AND hora= '$hora' ";
-            $result = $conexion->query($sql);
-            $row = mysqli_fetch_assoc($result);
-            $id = $row['id'];
             if ($conexion->query($sql) === TRUE) {
+                $sql = "SELECT * FROM citas WHERE nombre ='$nombre'AND correo = '$email' AND telefono = '$tel' AND fecha = '$fecha' AND hora= '$hora' ";
+                $result = $conexion->query($sql);
+                $row = mysqli_fetch_assoc($result);
+                $id = $row['id'];
                 // Redireccionar al usuario a la página index.html con el mensaje de éxito en la URL
-                header("Location: ../index.html?success=La fecha y horario se registraron correctamente. SU CÓDIGO DE CITA ES: $id");
+                header("Location: ../index.html?success=La fecha y horario se registraron correctamente. SU CÓDIGO DE CITA ES: ".$id." GUÁRDELO PARA CUALQUIER ACLARACIÓN");
                 exit();
             } else {
                 // Redireccionar al usuario a la página index.html con el mensaje de error en la URL
