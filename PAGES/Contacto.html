@@ -1,0 +1,215 @@
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../CSS/estilos.css">
+  <link rel="icon" type="image/png" href="../IMAGES/logo.png">
+</head>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2070adfd;">
+    <a class="navbar-brand" href="index.html">
+      <img src="../IMAGES/logo.png" width="60" height="30" class="d-inline-block align-top" alt="logo PECI">
+      <span class="navbar-brand-text inline-block text-white
+                    text-wrap">Proyectos Y Estudios Sobre
+        Contaminación Industrial S.A. de C.V.</span>
+    </a>
+    <button class="navbar-toggler w-100" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" style="background-color: #2070adc9;">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="../index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="Servicios.html">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="Nosotros.html">Nosotros</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="Contacto.html">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<body>
+
+  <div class="container-xl mt-5">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="card">
+          <center>
+            <h2>
+              <div class="card-header text-white" style="background-color: #FFA021;">Contactenos.
+              </div>
+            </h2>
+          </center>
+          <justify>
+            <div>
+              <h4>
+                <li>
+                  Telefono: 81-8372-63-82.
+                </li>
+                <li>
+                  Email: info@pecilab.com
+                </li>
+                <li>
+                  Email: cotizacion@pecilab.com
+                </li>
+            </div>
+            </h4>
+          </justify>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="card">
+          <center>
+            <h2>
+              <div class="card-header text-black">Ó
+              </div>
+            </h2>
+          </center>
+
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <div class="card">
+          <center>
+            <h2>
+              <div class="card-header text-white" style="background-color: #FFA021;">Agendar una cita
+              </div>
+            </h2>
+          </center>
+          <div class="card-body">
+            <form method="post" action="Agendar.php">
+              <div class="mb-3">
+                <label for="email" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre"
+                  required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo
+                  electrónico</label>
+                <input type="email" class="form-control" id="email" name="email"
+                  placeholder="Ingrese su correo electrónico" required>
+              </div>
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="text" class="form-control" id="telefono" name="telefono"
+                  placeholder="Ingrese un teléfono de contacto" required>
+              </div>
+              <div class="mb-3">
+                <label for="fecha" class="form-label">Seleccione una Fecha</label>
+                <input type="date" class="form-control" id="fecha" name="fecha" required>
+              </div>
+              <div class="mb-3">
+                <label for="hora" class="form-label">Seleccione un Horario</label>
+                <input type="time" class="form-control" id="hora" name="hora" required>
+              </div>
+              <center>
+                <button type="submit" class="btn" style="background-color:#3030BA; color: aliceblue;">Agendar</button>
+              </center>
+
+            </form>
+            <div class="card">
+              <center>
+                <div class="card-header text-white" style="background-color: #FFA021;">
+                  <h2>Cuenta con Cita?</h2>
+                </div>
+              </center>
+              <center>
+                <br>
+                <button onClick="Consultar()" class="btn" style="background-color:#3030BA; color: aliceblue;">Info de
+                  Cita</button>
+                <br>
+                <br>
+              </center>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script>
+    function Consultar() {
+      window.location.href = "Consultar.html";
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper-base.min.js"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+</body>
+<footer class="bg-dark">
+  <div class="row">
+    <div class="col-lg-4">
+      <h3 class="text-light">Redes Sociales</h3>
+      <div class="row justify-content-center mb-4">
+        <div class="col-lg-3 col-md-3 d-flex flex-column align-items-center">
+          <a href="#" class="text-light">
+            <div class="d-flex flex-column align-items-center social-icon">
+              <img src="../IMAGES/facebook.png" alt="Facebook" class="social img-fluid">
+              <span class="social-name">Facebook</span>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-3 d-flex flex-column align-items-center">
+          <a href="#" class="text-light">
+            <div class="d-flex flex-column align-items-center social-icon">
+              <img src="../IMAGES/twitter.png" alt="Twitter" class="social img-fluid">
+              <span class="social-name">Twitter</span>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-3 d-flex flex-column align-items-center">
+          <a href="#" class="text-light">
+            <div class="d-flex flex-column align-items-center social-ico">
+              <img src="../IMAGES/instagram.png" alt="Instagram" class="social img-fluid">
+              <span class="social-name">Instagram</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <h3 class="text-light">PECI LAB</h3>
+      <div class="row justify-content-end align-items-center mb-4">
+        <div class="col-lg-3 col-md-3 mx-2 d-flex justify-content-center">
+          <div class="d-flex flex-column align-items-center">
+            <p class="text-light">TELÉFONO: 81-8372-63-82</p>
+            <p class="text-light">EMAILS:</p>
+            <p class="text-light">info@pecilab.com</p>
+            <p class="text-light">cotizacion@pecilab.com</p>
+          </div>
+        </div>
+
+
+        <div class="col-lg-3 col-md-3 mx-2 d-flex justify-content-center">
+          <a href="#" class="text-light">Términos y condiciones de uso</a>
+        </div>
+        <div class="col-lg-3 col-md-3 mx-2 d-flex justify-content-center">
+          <a href="#" class="text-light">Aviso de privacidad</a>
+        </div>
+        <div class="col-lg-3 col-md-3 mx-2 d-flex justify-content-center">
+          <div class="d-flex flex-column align-items-center social-icon">
+            <img src="../IMAGES/logo.png" alt="PECILAB Logo" class="logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</html>
