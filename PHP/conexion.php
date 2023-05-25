@@ -1,8 +1,8 @@
 <?php 
-$host = "127.0.0.1:3307";
+$host = "127.0.0.1:3309";
 $user = "root";
-$password = "";
-$db = "PECI_Lab";
+$password = "XXXjosemanuels";
+$db = "pecilab";
 
 $conexion = new mysqli($host, $user, $password, $db);
 

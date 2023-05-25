@@ -59,23 +59,29 @@
         <div class="col-lg-5">
           <div class="appointment-form">
             <h2 class="text-danger">¡Obtén tu cotización gratis!</h2>
-            <form>
+            <form method="post" action="PHP/Agendar.php">
+              <div class="alert alert-danger" role="alert" id="error-message" style="display: none;"></div>
+              <div class="alert alert-success" role="alert" id="success-message" style="display: none;"></div>
               <div class="mb-3">
                 <label for="name">Nombre:</label>
-                <input type="text" class="form-control" id="name" placeholder="Introduzca su nombre">
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Introduzca su nombre">
               </div>
               <div class="mb-3">
                 <label for="email">Correo:</label>
-                <input type="email" class="form-control" id="email" placeholder="Introduzca su correo">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Introduzca su correo">
               </div>
               <div class="mb-3">
                 <label for="phone">Número de Contacto:</label>
-                <input type="tel" class="form-control" id="phone"
+                <input type="tel" class="form-control" id="telefono" name="telefono"
                   placeholder="Introduzca su número de teléfono o celular">
               </div>
               <div class="mb-3">
-                <label for="message">Mensaje:</label>
-                <textarea class="form-control text-area" id="message" rows="3" placeholder="Deje un mensaje"></textarea>
+                <label for="fecha" class="form-label">Seleccione una Fecha</label>
+                <input type="date" class="form-control" id="fecha" name="fecha" required>
+              </div>
+              <div class="mb-3">
+                <label for="hora" class="form-label">Seleccione un Horario</label>
+                <input type="time" class="form-control" id="hora" name="hora" required>
               </div>
               <button type="submit" class="btn btn-primary">Agendar Cita</button>
             </form>
@@ -89,8 +95,91 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper-base.min.js"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <!--Script para mostrar de 30 en 30 mins-->
+  <script>
+    // Obtener el elemento de entrada de hora
+    var horaInput = document.getElementById('hora');
 
+    // Establecer la hora mínima y máxima permitida
+    horaInput.min = '09:00';
+    horaInput.max = '18:00';
 
+    // Obtener la hora actual
+    var now = new Date();
+    var currentHour = now.getHours();
+    var currentMinute = now.getMinutes();
+
+    // Calcular el siguiente múltiplo de 30 minutos a partir de la hora actual
+    var next30Minute = Math.ceil(currentMinute / 30) * 30;
+    if (next30Minute === 60) {
+      next30Minute = 0;
+      currentHour += 1;
+    }
+
+    // Formatear la hora y los minutos como cadenas de dos dígitos
+    var formattedHour = ('0' + currentHour).slice(-2);
+    var formattedMinute = ('0' + next30Minute).slice(-2);
+
+    // Establecer el valor inicial del campo de entrada de hora al siguiente múltiplo de 30 minutos
+    horaInput.value = formattedHour + ':' + formattedMinute;
+
+    // Establecer los intervalos de tiempo en incrementos de 30 minutos
+    var interval = 30;
+    horaInput.step = interval.toString().padStart(2, '0');
+
+    // Función para verificar si un horario está dentro del rango permitido
+    function isValidTime(hour, minute) {
+      var startHour = 9; // Hora de inicio permitida (9 AM)
+      var endHour = 18; // Hora de finalización permitida (6 PM)
+
+      return hour >= startHour && hour <= endHour;
+    }
+
+    // Función para verificar y corregir automáticamente el horario seleccionado
+    function validateTime() {
+      var selectedTime = horaInput.value.split(':');
+      var selectedHour = parseInt(selectedTime[0], 10);
+      var selectedMinute = parseInt(selectedTime[1], 10);
+
+      if (!isValidTime(selectedHour, selectedMinute)) {
+        // El horario seleccionado está fuera del rango permitido, corregir automáticamente al horario más cercano dentro del rango
+        var correctedHour = Math.max(Math.min(selectedHour, 18), 9); // Ajustar al rango permitido
+        var correctedMinute = selectedMinute < 30 ? 0 : 30; // Establecer los minutos al siguiente múltiplo de 30
+
+        // Formatear la hora y los minutos corregidos como cadenas de dos dígitos
+        var formattedCorrectedHour = ('0' + correctedHour).slice(-2);
+        var formattedCorrectedMinute = ('0' + correctedMinute).slice(-2);
+
+        // Establecer el valor corregido en el campo de entrada de hora
+        horaInput.value = formattedCorrectedHour + ':' + formattedCorrectedMinute;
+      }
+    }
+
+    // Verificar y corregir automáticamente el horario seleccionado cuando se cambia el valor del campo de entrada de hora
+    horaInput.addEventListener('change', validateTime);
+  </script>
+
+  <!--Script para mostrar mensaje de success o de error para agendar-->
+  <script>
+    // Obtener los elementos de los mensajes de error y éxito
+    var errorDiv = document.getElementById('error-message');
+    var successDiv = document.getElementById('success-message');
+
+    // Obtener el mensaje de error o éxito de la URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var errorMessage = urlParams.get('error');
+    var successMessage = urlParams.get('success');
+
+    // Mostrar el mensaje de error o éxito si existen
+    if (errorMessage) {
+      errorDiv.textContent = errorMessage;
+      errorDiv.style.display = 'block';
+    }
+    if (successMessage) {
+      successDiv.textContent = successMessage;
+      successDiv.style.display = 'block';
+    }
+  </script>
 </body>
 <footer class="bg-dark">
   <div class="row">
