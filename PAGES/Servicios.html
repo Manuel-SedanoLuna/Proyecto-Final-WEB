@@ -39,7 +39,13 @@
 </header>
 
 <body>
-
+  <style>
+    .carousel-item img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: 60vh !important;
+    }
+  </style>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper-base.min.js"
     crossorigin="anonymous"></script>
@@ -47,18 +53,20 @@
 
   <br><br>
   <br>
-  <center>
-    <h1>Analisis bacteriologicos y tratamiento de aguas residuales</h1>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width: 70%; height: 70%;">
+  <div class="container">
+    <div class="text-center mt-5">
+      <h1>Analisis bacteriológicos y tratamiento de aguas residuales</h1>
+    </div>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100" src="../IMAGES/Imagen3.png" alt="First slide" style="height: 110%;">
+          <img class="d-block w-100 img-thumbnail" src="../IMAGES/Imagen3.png" alt="First slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="../IMAGES/Imagen4.png" alt="Second slide" style="height: 110%;">
+          <img class="d-block w-100 img-thumbnail" src="../IMAGES/Imagen4.png" alt="Second slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="../IMAGES/Imagen.png" alt="Third slide" style="height: 110%;">
+          <img class="d-block w-100 img-thumbnail" src="../IMAGES/Imagen.png" alt="Third slide">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -70,24 +78,28 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-  </center>
-  <br><br>
-  <div style="background-color:gray">
-    <p align="center" style="font-size:150%">Contamos con un equipo conformado por expertos y especialistas, capacitado
-      para asegurar resultados acertados de estudios como: </p>
-    <ul style="font-size:150%">
-      <li>Muestreos simples y compuestos de 8, 12 y 24 horas</li>
-      <li>Análisis microbiológicos: Coliformes Fecales y Huevos de Helminto</li>
-      <li>Análisis de Metales Pesados por espectrometría de absorción atómica: Los solicitados por la Normas Oficiales
-        Mexicanas, NOM-001- SEMARNAT-1996, NOM-002-SEMARNAT-1996 y NOM-003-SEMARNAT-1997</li>
-      <li>Análisis microbiológicos: Los solicitados por la Normas Oficiales Mexicanas, NOM-001-SEMARNAT-1996,
-        NOM-002-SEMARNAT-1996 y NOM003-SEMARNAT-1997</li>
-      <li>Análisis de contaminación de agua</li>
-      <li>Análisis de aguas residuales</li>
-      <li>Análisis fisicoquímicos</li>
-      <li>Análisis bacteriológicos</li>
-    </ul>
+
+    <div class="bg-light p-4 mt-5">
+      <h4 class="text-center mb-4">Contamos con un equipo conformado por expertos y especialistas, capacitado
+        para asegurar resultados acertados de estudios como:</h4>
+      <ul>
+        <li>Muestreos simples y compuestos de 8, 12 y 24 horas</li>
+        <li>Análisis microbiológicos: Coliformes Fecales y Huevos de Helminto</li>
+        <li>Análisis de Metales Pesados por espectrometría de absorción atómica: Los solicitados por la Normas Oficiales
+          Mexicanas,<strong> NOM-001- SEMARNAT-1996</strong>,<strong> NOM-002-SEMARNAT-1996</strong> y <strong>
+            NOM-003-SEMARNAT-1997</strong></li>
+        <li>Análisis microbiológicos: Los solicitados por la Normas Oficiales Mexicanas, <strong> NOM-001-SEMARNAT-1996
+          </strong>,
+          <strong> NOM-002-SEMARNAT-1996</strong> y <strong>NOM003-SEMARNAT-1997</strong>
+        </li>
+        <li>Análisis de contaminación de agua</li>
+        <li>Análisis de aguas residuales</li>
+        <li>Análisis fisicoquímicos</li>
+        <li>Análisis bacteriológicos</li>
+      </ul>
+    </div>
   </div>
+  <br><br><br><br>
 </body>
 <footer class="bg-dark">
   <div class="row">
