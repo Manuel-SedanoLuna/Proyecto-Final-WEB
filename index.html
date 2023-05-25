@@ -75,8 +75,8 @@
               </div>
               <div class="mb-3">
                 <label for="phone">Número de Contacto:</label>
-                <input type="tel" class="form-control" id="telefono" name="telefono"
-                  placeholder="Introduzca su número de teléfono o celular">
+                <input type="tel" class="form-control" id="telefono" name="telefono" pattern="[0-9]{10}"
+                  placeholder="Introduzca su número de teléfono o celular" required maxlength="10">
               </div>
               <div class="mb-3">
                 <label for="fecha" class="form-label">Seleccione una Fecha</label>
