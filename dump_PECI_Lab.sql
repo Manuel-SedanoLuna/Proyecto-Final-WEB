@@ -26,11 +26,11 @@ CREATE TABLE `citas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` text NOT NULL,
   `correo` text NOT NULL,
-  `telefono` int(11) NOT NULL,
+  `telefono` bigint(20) DEFAULT NULL,
   `fecha` date NOT NULL,
   `hora` time DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `citas` (
 
 LOCK TABLES `citas` WRITE;
 /*!40000 ALTER TABLE `citas` DISABLE KEYS */;
-INSERT INTO `citas` VALUES (1,'Juan Perez','juanperez@hotmail.com',1234567890,'2023-05-10','10:30:00'),(6,'manuel','juanperez@hotmail.com',2147483647,'2023-05-26','08:53:00');
+INSERT INTO `citas` VALUES (1,'Juan Perez','juanperez@hotmail.com',1234567890,'2023-05-10','10:30:00'),(11,'manuel','manuels.luna14@gmail.com',7771870208,'2023-05-30','16:30:00'),(12,'manuel','juanperez@hotmail.com',7771870208,'2023-05-31','16:30:00'),(13,'manuel','david@ppsc.edu.mx',5651646513,'2023-05-25','17:00:00');
 /*!40000 ALTER TABLE `citas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-25 12:15:42
+-- Dump completed on 2023-05-25 16:50:51
